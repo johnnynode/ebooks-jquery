@@ -1,0 +1,62 @@
+AJAX 阿贾克斯
+Javascript + CSS +XML + HTML
+
+XMLHTTPRequest
+
+readyState 属性
+0：open之前
+1：请求已经建立但还没有发出（调用 send() 之前）。 
+2：请求已经发出正在处理之中（这里通常可以从响应得到内容头部） 
+3：请求已经处理，响应中通常有部分数据可用，但是服务器还没有完成响应。 
+4：响应已完成，可以访问服务器响应并使用它。
+
+1)如何创建它的对象 
+  var xmlHttp;
+  if(window.ActiveXObject){
+     xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+  else{
+     xmlHttp = new XMLHTTPRequest();
+  }
+2)如何发出异步请求(request)，当某个事件发生时调用
+  function func(){
+     //指定处理反馈信息的函数
+     xmlHttp.onreadystatechage = handler;
+     //建立连接
+     xmlHttp.open("get","requestURL?uname=jack",true);
+     xmlHttp.send(null);//发送请求
+  }
+3)如何处理异步请求的反馈信息(responseText/responseXML)
+  function handler(){
+      //反馈结束
+      if(xmlHttp.readyState == 4){
+          //服务器正常返回，status==200
+          if(xmlHttp.status == 200){
+             //处理正常返回来的数据
+          }
+      }
+  }
+-------------------------------------------------------
+jQuery，一组方便使用的Javascript开源库，JS框架
+
+DOM 对象 => HTML 元素
+
+var d = document.getElementById("");
+
+jquery对象：
+1）是对DOM对象的包装
+2）本质是一个集合(数组)，集合里包含了(0~n)个DOM对象
+3）jquery扩展了集合的功能，比如:fadeIn()、show()、hide()
+4）当调用jquery对象的的方法时，jquery会进行隐式迭代，将该方法调用应用到集合里的每一个DOM对象上。
+5）链式调用，
+
+--------------------------------
+各种选择器的学习
+
+
+
+
+
+
+
+
+
